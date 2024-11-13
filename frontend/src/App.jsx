@@ -25,6 +25,9 @@ import AdminUsersPage from './pages/admin/AdminUsersPage'
 import FooterComponent from './components/FooterComponent'
 import HeaderComponent from './components/HeaderComponent'
 
+// users
+import RoutesWithUserChatComponent from './components/user/RoutesWithUserChatComponent'
+
 
 function App() {
  
@@ -35,12 +38,16 @@ function App() {
     <HeaderComponent/>
     <Routes>
 
+    <Route element={<RoutesWithUserChatComponent/>}>
+
       <Route path='/' element={<HomePage/>} />
       <Route path='/cart' element={<CartPage/>}/>
       <Route path='/product-details' element={<ProductDetailsPage/>}/>
       <Route path='/product-list' element={<ProductListPage/>}/>
       <Route path='/register' element={<RegisterPage/>}/>
       <Route path='/login' element={<LoginPage/>}/>
+      
+      </Route>
 
       <Route element={<ProtectedRoutesComponent admin={false} />}>
 
@@ -48,6 +55,7 @@ function App() {
       <Route path='/user/my-orders' element={<UserOrdersPage/>}/>
       <Route path='/user/cart-details' element={<UserCartDetailsPage/>}/>
       <Route path='/user/order-details' element={<UserOrderDetailsPage/>}/>
+      
       
       </Route>
 
